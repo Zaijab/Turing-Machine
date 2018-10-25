@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, width=auto, user-scalable=no">
+<title>Turing Machine Simulator</title>
+<link rel="stylesheet" type="text/css" href="turing.css">
+<script src="turing.js"></script>
+</head>
+<body onload="initialize(); set_display(); reset('code');">
+
+
+
+
+<div id="grid_display" style="padding: 10px 20px 0px;">
+<canvas id="grid_tape" width="500" height="40" style="border:1px #66FF33 solid;"></canvas>
+</div>
+
+
+
+<div id="display" style="padding: 0px 20px;"></div>
+
+
+
+<div id="tape_controls" style="padding: 5px 20px;">
+<div style="display: inline-block;">
+<input type="button" onclick="reset('tape')" value="clear"></input> clears the contents of the tape<br/><br/>
+<input type="button" onclick="reset('code')" value="reset"></input> resets the code entry area to the default<br/><br/>
+<input type="text" id="tape_config" placeholder="start1,length1;start2,length2" style="width: 125px;"></input>
+<input type="button" value="&nbsp;set&nbsp;" onclick="set_tape_config()"></input> sets the tape configuration
+</div>
+<div onclick="help('show');" style="display: inline-block; border: 1px #3366FF solid; color: #3366FF; cursor: pointer;">
+<div style="font-size: 50pt; width: 100%; text-align: center;">?</div>
+<div style="font-size: 8pt;">click here for help</div>
+</div>
+</div>
+
+
+
+<div id="code_wrapper" style="padding: 10px 20px;">
+<textarea id="code" cols="70" rows="15" ></textarea>
+</div>
+
+
+
+<div id="controls" style="padding: 5px 20px;">
+<input type="button" onclick="get_program(); run_program()" value="&nbsp;run "></input> max # of computation steps: <input type="text" id="max_steps" style="width: 75px;" value="10000"></input><br/><br/>
+
+<input type="button" onclick="get_program(); step_program()" value="step"></input> time per step: <input type="text" id="time" style="width: 50px;" value="250"></input> milliseconds<br/><br/>
+
+<input type="button" onclick="stop_program()" value="stop" style="color:red;"></input> stops program execution (use if an infinite loop starts)
+</div>
+
+
+
+</body>
+
+<script type="text/javascript">
+var sc_project=5095669;
+var sc_invisible=1;
+var sc_partition=58;
+var sc_click_stat=1;
+var sc_security="91587c68";
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script><noscript><div
+class="statcounter"><a title="visitors on myspace"
+href="http://www.statcounter.com/myspace/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/5095669/0/91587c68/1/"
+alt="visitors on myspace" ></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+</html>
